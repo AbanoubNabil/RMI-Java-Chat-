@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JAVA_CAHT_server.jnlp">
+  <information>
+    <title>JAVA_CAHT_server</title>
+    <vendor>IROCK</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JAVA_CAHT_server.jar" size="1544185" download="eager" />
+    <jar href="lib/JAVA_CHAT_interfaces.jar" size="6743" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="843090" download="eager" />
+    <jar href="lib/org-apache-commons-logging.jar" size="60786" download="eager" />
+    <jar href="lib/org.apache.commons.io.jar" size="83613" download="eager" />
+    <jar href="lib/rmiio-2.0.1.jar" size="106636" download="eager" />
+    <jar href="lib/rmiio-2.0.4.jar" size="109702" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JAVA_CAHT_server" >
+    <param name="requiredFXVersion" value="2.2+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="java_caht_server.JavaProg"  name="JAVA_CAHT_server" />
+  <update check="always"/>
+</jnlp>

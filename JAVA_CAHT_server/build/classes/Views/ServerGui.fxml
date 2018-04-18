@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="808.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="java_caht_server.ServerController">
+   <children>
+      <ImageView fitHeight="310.0" fitWidth="431.0" layoutX="-1.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chat_logo.png" />
+         </image>
+      </ImageView>
+      <SplitPane dividerPositions="0.2583436341161928" layoutX="-4.0" layoutY="88.0" prefHeight="395.0" prefWidth="811.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="393.0" prefWidth="182.0">
+               <children>
+                  <ListView fx:id="userList" layoutX="-6.0" layoutY="26.0" prefHeight="365.0" prefWidth="214.0" />
+                  <Button fx:id="onlineB" layoutY="2.0" mnemonicParsing="false" onAction="#onlineHandel" prefHeight="25.0" prefWidth="59.0" text="Online" />
+                  <Button fx:id="busyB" layoutX="104.0" layoutY="2.0" mnemonicParsing="false" onAction="#busy" prefHeight="25.0" prefWidth="48.0" text="Busy" />
+                  <Button fx:id="awayB" layoutX="149.0" layoutY="2.0" mnemonicParsing="false" onAction="#awayHandel" prefHeight="25.0" prefWidth="59.0" text="Away" />
+                  <Button fx:id="oflineB" layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onAction="#oflineHandel" text="ofline" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="393.0" prefWidth="608.0">
+               <children>
+                  <ImageView fitHeight="71.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="userImg" fitHeight="113.0" fitWidth="159.0" layoutX="221.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/default.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nameL" layoutX="207.0" layoutY="119.0" prefHeight="45.0" prefWidth="182.0" textFill="#403d3d">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font></Label>
+                  <Label fx:id="genderL" layoutX="406.0" layoutY="257.0" prefHeight="34.0" prefWidth="135.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="emailL" layoutX="359.0" layoutY="180.0" prefHeight="34.0" prefWidth="182.0">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font></Label>
+                  <Label fx:id="countryL" layoutX="72.0" layoutY="257.0" prefHeight="34.0" prefWidth="125.0">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font></Label>
+                  <Label fx:id="statusL" layoutX="72.0" layoutY="180.0" prefHeight="34.0" prefWidth="135.0">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font></Label>
+                  <Label layoutX="474.0" layoutY="21.0" prefHeight="30.0" prefWidth="117.0" text="Register User">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font></Label>
+                  <ImageView fx:id="adduser" fitHeight="25.0" fitWidth="21.0" layoutX="453.0" layoutY="26.0" onMousePressed="#registerFromAdmin" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/add-1-icon.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <Pane layoutX="-4.0" layoutY="479.0" prefHeight="53.0" prefWidth="811.0" style="-fx-background-color: #486380;">
+         <children>
+            <Button fx:id="startB" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#startServer" prefHeight="25.0" prefWidth="78.0" text="Start" />
+            <Button fx:id="stopB" layoutX="120.0" layoutY="15.0" mnemonicParsing="false" onAction="#stopServer" prefHeight="25.0" prefWidth="72.0" text="Stop" />
+            <Button fx:id="statusB" layoutX="209.0" layoutY="16.0" mnemonicParsing="false" onAction="#statusBAction" prefHeight="25.0" prefWidth="72.0" text="Status" />
+            <TextField fx:id="txtField" layoutX="418.0" layoutY="12.0" onAction="#txtFieldAction" prefHeight="34.0" prefWidth="306.0" promptText="       write an announcement" />
+            <Label fx:id="serverstate" layoutX="307.0" layoutY="12.0" prefHeight="30.0" prefWidth="99.0" textFill="#f8f3f3">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="logo" fitHeight="81.0" fitWidth="240.0" layoutX="337.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fxchat.png" />
+         </image></ImageView>
+      <Pane layoutX="-4.0" onMouseDragged="#drag2" onMousePressed="#drag1" prefHeight="0.0" prefWidth="795.0" style="-fx-background-color: #A9A9A9;">
+         <children>
+            <Label fx:id="adminName" layoutX="168.0" prefHeight="45.0" prefWidth="194.0" text="Name " textFill="#fffafa">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="168.0" layoutY="40.0" prefHeight="21.0" prefWidth="125.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="adminImage" fitHeight="71.0" fitWidth="117.0" layoutX="35.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/default.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="745.0" layoutY="14.0" onMousePressed="#closeAction" prefHeight="34.0" prefWidth="46.0" text=" X" textFill="#f5f2f2">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="685.0" layoutY="-9.0" onMousePressed="#minAction" prefHeight="45.0" prefWidth="46.0" text="-" textFill="WHITE">
+         <font>
+            <Font size="67.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

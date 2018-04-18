@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="170.0" maxWidth="542.0" minHeight="170.0" minWidth="542.0" prefHeight="170.0" prefWidth="550.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.NotificationController">
+  <children>
+    <Pane layoutY="-1.0" maxHeight="36.0" minHeight="20.0" minWidth="542.0" prefHeight="36.0" style="-fx-background-color: #A9A9A9;">
+      <children>
+        <Label layoutX="172.0" layoutY="4.0" maxWidth="550.0" prefHeight="29.0" prefWidth="152.0" text="Friend Request" textFill="#fffbfb">
+          <font>
+            <Font name="System Bold Italic" size="18.0" />
+          </font>
+        </Label>
+      </children>
+    </Pane>
+    <ImageView fx:id="senderImage" fitHeight="120.0" fitWidth="152.0" layoutX="34.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
+    <Label fx:id="senderNameLable" layoutX="203.0" layoutY="43.0" prefHeight="27.0" prefWidth="198.0" text="senderNameLable">
+      <font>
+        <Font size="18.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="202.0" layoutY="72.0" prefHeight="27.0" prefWidth="243.0" text="want to be friend with you" />
+    <Button fx:id="AcceptBtn" layoutX="186.0" layoutY="111.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: green;" text="Accept" textFill="#f8f3f3">
+      <font>
+        <Font size="14.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Button fx:id="CancelBtn" font="$x2" layoutX="302.0" layoutY="111.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: red;" text="Cancel" textFill="#fcf7f7" />
+  </children>
+</AnchorPane>

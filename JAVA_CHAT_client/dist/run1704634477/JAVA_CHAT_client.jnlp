@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JAVA_CHAT_client.jnlp">
+  <information>
+    <title>JAVA_CHAT_client</title>
+    <vendor>IROCK</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JAVA_CHAT_client.jar" size="1768514" download="eager" />
+    <jar href="lib/JAVA_CHAT_interfaces.jar" size="6743" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="843090" download="eager" />
+    <jar href="lib/org-apache-commons-logging.jar" size="60786" download="eager" />
+    <jar href="lib/org.apache.commons.io.jar" size="83613" download="eager" />
+    <jar href="lib/rmiio-2.0.1.jar" size="106636" download="eager" />
+    <jar href="lib/rmiio-2.0.4.jar" size="109702" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JAVA_CHAT_client" >
+    <param name="requiredFXVersion" value="2.2+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="java_chat_client.JAVA_CHAT_client"  name="JAVA_CHAT_client" />
+  <update check="always"/>
+</jnlp>

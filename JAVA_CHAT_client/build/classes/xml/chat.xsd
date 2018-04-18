@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="Chat" type="chatType"/>
+
+<!--chat type-->
+<xs:complexType name="chatType">
+	<xs:sequence>
+		<!--<xs:element name="Messages" type="MsgsType" maxOccurs="1"/>-->
+		<xs:element name="Message" type="MsgType" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+<!--MessagesType-->
+<!--
+<xs:complexType name="MsgsType">
+	<xs:sequence>
+		<xs:element name="Message" type="MsgType" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+-->
+<!--Message Type-->
+<xs:complexType name="MsgType">
+	<xs:sequence>
+		<xs:element name="Sender" type="SenderType"/>
+		<xs:element name="Receiver" type="ReceiverType"/>
+	</xs:sequence>
+	<xs:attribute name="color" type="xs:string"/>
+	<xs:attribute name="font" type="xs:string"/>
+</xs:complexType>
+
+<!--Sender Type-->
+<xs:complexType name="SenderType">
+	<xs:simpleContent>
+		<xs:extension base="xs:string">
+			<xs:attribute name="id" type="xs:integer"/>
+		</xs:extension>
+	</xs:simpleContent>
+</xs:complexType>
+
+<!-- ReceiverType -->
+<xs:complexType name="ReceiverType">
+	<xs:attribute name="id" type="xs:integer"/>
+</xs:complexType>
+
+</xs:schema>

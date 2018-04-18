@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="605.0" prefWidth="534.0" style="-fx-background-color: #fccc66;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SignUpControllerFromAdmin">
+    <stylesheets>
+        <URL value="@signup.css" />
+    </stylesheets>
+    <children>
+        <TextField fx:id="firstName" layoutX="72.0" layoutY="207.0" prefHeight="42.0" prefWidth="393.0" promptText="Enter Your First Name ....">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="lastName" layoutX="72.0" layoutY="267.0" prefHeight="42.0" prefWidth="393.0" promptText="Enter Your Last Name ....">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="email" layoutX="72.0" layoutY="331.0" prefHeight="42.0" prefWidth="393.0" promptText="Enter Your Email ....">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="password" layoutX="72.0" layoutY="390.0" prefHeight="42.0" prefWidth="393.0" promptText="Enter Your Password ....">
+            <font>
+                <Font name="Arial Bold Italic" size="16.0" />
+            </font>
+        </TextField>
+        <RadioButton fx:id="male" layoutX="193.0" layoutY="454.0" mnemonicParsing="false" text="male" textFill="#807474">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="female" layoutX="319.0" layoutY="454.0" mnemonicParsing="false" text="female" textFill="#807474">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </RadioButton>
+        <Label layoutX="79.0" layoutY="447.0" prefHeight="42.0" prefWidth="59.0" text="Gender" textFill="#807474">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="55.0" layoutY="373.0" />
+        <ComboBox fx:id="country" layoutX="260.0" layoutY="503.0" onMouseDragged="#drag2" onMousePressed="#drag1" prefHeight="25.0" prefWidth="180.0" promptText="Egypt" />
+           
+        <Label layoutX="79.0" layoutY="503.0" prefHeight="25.0" prefWidth="169.0" text="Choose Your Country" textFill="#807474">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <Button fx:id="register" layoutX="89.0" layoutY="549.0" mnemonicParsing="false" onAction="#confirmRegister" prefHeight="42.0" prefWidth="342.0" style="-fx-background-color: #486380;" text="Register" textFill="#f5f3f3">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+      <Pane layoutY="-2.0" onMouseDragged="#drag2" onMousePressed="#drag1" prefHeight="58.0" prefWidth="536.0" style="-fx-background-color: #A9A9A9;">
+         <children>
+            <Label fx:id="close" layoutX="496.0" layoutY="7.0" prefHeight="28.0" prefWidth="16.0" text="X" textFill="#eeeaea">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="minimize" layoutX="448.0" layoutY="-13.0" prefHeight="42.0" prefWidth="25.0" text="-" textFill="#fffdfd">
+               <font>
+                  <Font size="54.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="102.0" layoutY="60.0" prefHeight="123.0" prefWidth="333.0">
+         <children>
+            <ImageView fitHeight="123.0" fitWidth="133.0" layoutX="119.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../JAVA_CHAT_client/src/images/register.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>

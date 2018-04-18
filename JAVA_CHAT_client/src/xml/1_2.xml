@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><?xml-stylesheet type='text/xsl' href='history.xsl'?>
+<Chat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="chat.xsd">
+    <Message color="rgb(204,51,51)" font="Georgia">
+        <Sender id="1">hfgjdhfgsjdfhgjsdf</Sender>
+        <Receiver id="2"/>
+    </Message>
+</Chat>

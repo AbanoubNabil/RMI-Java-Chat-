@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="730.0" maxWidth="895.0" prefHeight="705.0" prefWidth="753.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatViewController">
+   <left>
+      <VBox maxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="onlineUsersHbox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="217.0" stylesheets="@../styles/ListViewStyle.css">
+               <children>
+                  <Label fx:id="onlineLabel" prefHeight="50.0" prefWidth="124.0" text="Online Users:" textAlignment="CENTER" textFill="#1e0601">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" />
+                     </opaqueInsets>
+                  </Label>
+                  <Label fx:id="onlineCountLabel" prefHeight="48.0" prefWidth="94.0" text="0" textFill="#1e0601">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <ListView fx:id="userList" prefHeight="580.0" prefWidth="237.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin></ListView>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="800.0" minWidth="600.0" prefHeight="80.0" prefWidth="753.0" style="-fx-background-color: #fccc66;" BorderPane.alignment="CENTER">
+         <center>
+            <ImageView fitHeight="79.0" fitWidth="522.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../images/fxchat.png" />
+               </image>
+               <BorderPane.margin>
+                  <Insets right="100.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </center>
+         <right>
+            <HBox prefHeight="79.0" prefWidth="125.0" stylesheets="@../styles/ButtonStyle.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="59.0" prefWidth="125.0">
+                     <children>
+                        <ImageView fx:id="minimize" fitHeight="30.0" fitWidth="30.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="close" fitHeight="30.0" fitWidth="30.0" layoutX="81.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </right>
+         <left>
+            <HBox prefHeight="93.0" prefWidth="259.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="userImageView" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/default.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox prefHeight="65.0" prefWidth="144.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="30.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label fx:id="usernameLabel" prefHeight="25.0" prefWidth="132.0" text="user name" textFill="#fffcfb">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="statusComboBox" onAction="#setStatusAction" prefHeight="25.0" prefWidth="101.0" promptText="Online" stylesheets="@../views/ComboBox.css">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Online" />
+                                 <String fx:value="Away" />
+                                 <String fx:value="Busy" />
+                              </FXCollections>
+                           </items>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                  </VBox>
+               </children></HBox>
+         </left>
+      </BorderPane>
+   </top>
+   <rotationAxis>
+      <Point3D />
+   </rotationAxis>
+   <center>
+        <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="450.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="445.0" BorderPane.alignment="CENTER">
+   <center>
+      <ScrollPane maxWidth="452.0" minWidth="414.0" prefHeight="385.0" prefWidth="452.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="vBox" maxWidth="451.0" minWidth="422.0" prefHeight="387.0" prefWidth="446.0" />
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <FlowPane prefHeight="61.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtFiled" onAction="#handleTextFiledActionPressed" prefHeight="61.0" prefWidth="452.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+                     <FlowPane.margin>
+                        <Insets top="6.0" />
+                     </FlowPane.margin></TextField>
+         </children>
+      </FlowPane>
+   </bottom>
+   <top>
+      <Pane maxWidth="450.0" minWidth="450.0" prefHeight="88.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="myImage" fitHeight="69.0" fitWidth="89.0" layoutX="7.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="frindNameLable" layoutX="105.0" layoutY="57.0" text="frind name">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+                  <TextField fx:id="searchTextField" layoutX="210.0" layoutY="22.0" prefHeight="37.0" prefWidth="197.0" promptText="Search for friend ">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font></TextField>
+                  <ImageView fx:id="searchImg" fitHeight="30.0" fitWidth="50.0" layoutX="407.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/search%20.png" />
+                     </image>
+                  </ImageView>
+         </children>
+      </Pane>
+   </top>
+</BorderPane>
+   </center>
+   <bottom>
+      <Pane prefHeight="33.0" prefWidth="753.0" BorderPane.alignment="CENTER">
+         <children>
+            <ColorPicker fx:id="color" layoutX="299.0" layoutY="2.0" onAction="#setColorPic" prefHeight="25.0" prefWidth="132.0" />
+            <ComboBox fx:id="fontSize" layoutX="444.0" layoutY="2.0" onAction="#setSize" prefHeight="25.0" prefWidth="86.0" promptText="1" />
+            <ComboBox fx:id="fontfamily" layoutX="548.0" layoutY="2.0" onAction="#setFamily" prefHeight="25.0" prefWidth="109.0" promptText="arial" />
+            <ImageView fx:id="sendFileImageView" fitHeight="43.0" fitWidth="50.0" layoutX="657.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/attach.png" />
+               </image></ImageView>
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>
